@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<h2>Login</h2>
+
+<form method="post" action="@Url.Action("Login","Auth")">
+    <div class="row">
+        <div class="input-field col s12 m6">
+            <input name="Username" type="text">
+            <label>Username</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <input name="Password" type="password">
+            <label>Password</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <label>
+                <input type="checkbox" class="filled-in" checked="checked" name="RememberMe" value="true" />
+                <span>Remember me</span>
+                <input type="hidden" name="RememberMe" value="false" />
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6">
+            <input type="submit" class="waves-effect waves-light btn" value="Login" />
+        </div>
+        <div class="col s12 m6">
+            <a href="@Url.Action("List","Home")" class="waves-effect waves-light btn">Cancel</a>
+        </div>
+    </div>
+</form>
+

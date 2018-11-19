@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>My shopping list | Ioannis Panagopoulos</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="~/www/site.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <li><a href="@Url.Action("Login", "Auth")">Login</a></li>
+                }
+                else
+                {
+                    <li>
+                        <span>Hello @User.Identity.Name</span>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Logout", "Auth")">Logout</a>
+                    </li>
+                }
+                @*<li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">JavaScript</a></li>*@
+            </ul>
+        </div>
+    </nav>
+    <header>
+        My shopping List Ver 1.0
+    </header>
+    <div class="row">
+        <div class="col m8 s12">
+            <div class="main-content">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="col m4 s12">
+            <div class="side-content">
+                @RenderSection("side", false)
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2018 - Coding Bootcamp
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>

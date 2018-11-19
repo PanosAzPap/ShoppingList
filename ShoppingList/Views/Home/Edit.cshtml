@@ -1,0 +1,43 @@
+﻿@model ShoppingList.Models.ItemVM
+
+@{
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+
+<form method="post" action="@Url.Action("EditSubmit","Home")">
+    <div class="row">
+        <div class="input-field col s12 m6">
+            <input name="Id" type="text" value="@Model.Id">
+            <label>Id</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <input name="Text" type="text" value="@Model.Text">
+            <label>Item</label>
+        </div>
+        <div class="input-field col s12 m6">
+            <input name="Price" type="text" value="@Model.Price">
+            <label>Price</label>
+        </div>
+        <div class="input-field col s12 m12">
+            <input name="Link" type="text" value="@Model.Link">
+            <label>Link</label>
+        </div>
+        <div class="input-field col s6 m2">
+            <input name="Priority" type="text" value="@Model.Priority">
+            <label>Priority</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6">
+            <input type="submit"  class="waves-effect waves-light btn"/>
+        </div>
+        <div class="col s12 m6">
+            <a href="@Url.Action("List","Home")" class="waves-effect waves-light btn">Cancel</a>
+        </div>
+    </div>
+</form>
+
+@section side{
+    sldkgj skdfghskjdfghskdfg 
+}
